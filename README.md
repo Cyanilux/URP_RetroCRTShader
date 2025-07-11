@@ -1,5 +1,8 @@
 # Retro CRT Shader (for Universal RP)
 A shader graph which replicates some retro tv/monitor effects.<br />
+```diff
++ Updated for Unity 2022+ (now uses Fullscreen Graph & FullscreenPassRendererFeature rather than a custom one)
+```
 
 ![Retro](retro.gif)
 
@@ -20,5 +23,5 @@ Example also includes a multi-camera setup to render the scene to a low-resoluti
 <br />
 If you aren't using URP / shadergraph but are interested in what the graph looks like, here's a high quality image instead :
 ![RetroGraph](retro_graph.png)
-I've also written up a blog post to attempt to explain parts of the graph a bit more :<br />
+I also have an old blog post that attempts to explain some parts of the graph :<br />
 https://cyangamedev.wordpress.com/2020/09/10/retro-crt-shader-breakdown/

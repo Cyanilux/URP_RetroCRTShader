@@ -2,27 +2,49 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!21 &2100000
 Material:
-  serializedVersion: 6
+  serializedVersion: 8
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Retro
   m_Shader: {fileID: -6465566751694194690, guid: 77b7bf11caf2e2e43823cdbe4ee381e1, type: 3}
-  m_ShaderKeywords: CRT_WARP_ON DISTORT_ON RGB_STRIPES_ON SCROLL_STATIC_ON STATIC_ON
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords:
+  - CRT_WARP_ON
+  - DISTORT_ON
+  - RGB_STRIPES_ON
+  - SCROLL_STATIC_ON
+  - STATIC_ON
+  m_InvalidKeywords: []
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
   stringTagMap: {}
   disabledShaderPasses: []
+  m_LockedProperties: 
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
     - _MainTex:
+        m_Texture: {fileID: 8400000, guid: 2e4524c94738e81439b8b35b87ede5c6, type: 2}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_Lightmaps:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - unity_LightmapsInd:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_ShadowMasks:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
     m_Floats:
     - CRT_WARP: 1
     - DISTORT: 1
@@ -30,15 +52,30 @@ Material:
     - SCROLL_STATIC: 1
     - STATIC: 1
     - Vector1_1BFF6B46: 256
-    - Vector1_5660967D: 2
+    - Vector1_5660967D: 1
     - Vector1_63AA1B2A: 0.2
     - Vector1_96113905: 100
     - Vector1_DF019693: 0.5
     - WOBBLE: 0
     - _DistortionStrength: 0.5
+    - _QueueControl: 0
+    - _QueueOffset: 0
     - _ScanlineHeight: 10
-    - _ScanlineStrength: 0.5
+    - _ScanlineStrength: 0.4
     - _StaticStrength: 0.08
     m_Colors:
     - _CRTWarpStrength: {r: 1, g: 1, b: 0, a: 0}
   m_BuildTextureStacks: []
+--- !u!114 &6657729383248154032
+MonoBehaviour:
+  m_ObjectHideFlags: 11
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0353a89b1f911e48b9e16bdc9f2e058, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 7
