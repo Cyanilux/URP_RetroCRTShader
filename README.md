@@ -1,7 +1,9 @@
 # Retro CRT Shader (for Universal RP)
 A shader graph which replicates some retro tv/monitor effects.<br />
 ```diff
-+ Updated for Unity 2022+ (now uses Fullscreen Graph & FullscreenPassRendererFeature rather than a custom one)
++ Updated for Unity 2022+
+(now uses Fullscreen Graph & FullscreenPassRendererFeature rather than a custom one)
+- For older version see branches
 ```
 
 ![Retro](retro.gif)
