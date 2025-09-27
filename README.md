@@ -1,5 +1,5 @@
 # Retro CRT Shader (for Universal RP)
-A shader graph which replicates some retro tv/monitor effects.<br />
+A shader graph which replicates some retro tv/monitor effects.
 ```diff
 + Updated for Unity 2022+
 (now uses Fullscreen Graph & FullscreenPassRendererFeature rather than a custom one)
@@ -8,22 +8,23 @@ A shader graph which replicates some retro tv/monitor effects.<br />
 
 ![Retro](retro.gif)
 
-Most effects can be toggled on and off, uses shader_feature keywords to create multiple shader variants. Only used variants will be included in build. If you want to be able to toggle effects at runtime (using material.EnableKeyword), switch them to multi_compile keywords in the shadergraph blackboard instead.<br />
-<br />
-Effects include : <br />
-• CRT (cathode-ray tube) monitor warping<br />
-• Scanlines<br />
-• Image Distortion<br />
-• Static<br />
-• Scrolling glitchy static<br />
-• Vertical RGB subpixel / phosphor stripes<br />
-<br />
-Example also includes a multi-camera setup to render the scene to a low-resolution render texture, to achieve a pixelated look. The main camera's culling mask is set to nothing, so the scene isn't rendered twice, and it uses a different forward renderer which uses the Retro CRT Shader/material in an **Blit render feature** to apply it as an image effect, before additional post processing (**Vignette, Film Grain, Chromatic Aberration**). It could likely be applied to a regular mesh renderer too though, e.g. if you wanted to use it for a TV monitor.<br />
-<br />
-@Cyanilux<br />
-:)<br />
-<br />
-If you aren't using URP / shadergraph but are interested in what the graph looks like, here's a high quality image instead :
+Effects include :
+- CRT (cathode-ray tube) monitor warping
+- Scanlines
+- Image Distortion
+- Static
+- Scrolling glitchy static
+- Vertical RGB subpixel / phosphor stripes
+
+Repo also includes a multi-camera example setup to render the scene to a low-resolution render texture, to achieve a pixelated look. The main camera's culling mask is set to nothing, so the scene isn't rendered twice, and it uses a different Universal Renderer asset which uses the Retro CRT Shader/material in an **Fullscreen Pass Render Feature** to apply the shader to the screen, before additional post processing (**Vignette, Film Grain, Chromatic Aberration**)
+
+Usage Notes :
+- If want to apply to a regular Mesh Renderer (e.g. for a TV monitor), would need to swap the Graph type to Lit or Unlit.
+- If you want to apply to screen without the second camera setup / pixelated look, swap the texture sample out in the graph for a `URP Sample Buffer` node set to "Blit Source". Use the material with **Fullscreen Pass Renderer Feature** on the Universal Renderer asset used by your camera.
+- Most effects as listed above can be toggled on/off in the material inspector as the graph uses `shader_feature` keywords to create multiple shader variants. Only used variants will be included in build. Note that if you want to be able to toggle effects at runtime (using material.EnableKeyword), you would need to switch the keywords to `multi_compile` instead to force both on/off variants to be included.
+
+Graph Screenshot :
+
 ![RetroGraph](retro_graph.png)
-I also have an old blog post that attempts to explain some parts of the graph :<br />
-https://cyangamedev.wordpress.com/2020/09/10/retro-crt-shader-breakdown/
+
+Blog Post (on my old site) : https://cyangamedev.wordpress.com/2020/09/10/retro-crt-shader-breakdown/
